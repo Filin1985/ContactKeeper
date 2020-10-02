@@ -1,7 +1,11 @@
 // Фреймворк для серверной части сайта на базе Node.js
-const express = require('express')
+const express = require('express');
+const connectDB = require('./config/db');
 
 const app = express();
+
+// Подключаем базу данных
+connectDB();
 
 app.get('/', (req, res) => res.json({ msg: 'Welcome to the ContactKeeper API...' }))
 
